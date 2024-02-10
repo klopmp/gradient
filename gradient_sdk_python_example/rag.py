@@ -17,7 +17,7 @@ from gradientai import (
 def run_answer_example(*, gradient: Gradient) -> None:
     print("==== Q & A ====")
     #print(f"Document: {document}\n")
-    question = "How manu invoices are there? Only return the number and nothing else."
+    question = "How manu invoices are there total? Only return the number and nothing else."
 
     print(f"• Question: {question}\n")
     #print("Answering question...")
@@ -25,22 +25,23 @@ def run_answer_example(*, gradient: Gradient) -> None:
         question=question,
         source={
             "type": "rag",
-            "collectionId": ""
+            "collectionId": "632675d7-5e7e-4cb1-a80f-131218cfbfd9_rag_config"
         },
     )
     print(f"• Answer: {result['answer']}")
-    print("\n")
-    print("================\n")
-    print("\n")
+    
 
-    question = "Output Invoice ID and Amounts as columns in a table. Exclude invoice without an Invoice ID."
+    question = "Output Invoice ID, Company Name and Amounts as columns in a table. Report any parsing error."
+
+    print("\n")
+    print("==== Q & A ====")
 
     print(f"• Question: {question}\n")
     result = gradient.answer(
         question=question,
         source={
             "type": "rag",
-            "collectionId": "76f2bc82-5e96-4661-879b-338e29f1b6ee_rag_config"
+            "collectionId": "95fb08f3-d668-43f3-a316-78c2021f2a63_rag_config"
         },
     )
     print(f"• Answer: {result['answer']}")
